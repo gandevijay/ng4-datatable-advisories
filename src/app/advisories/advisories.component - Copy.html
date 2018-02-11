@@ -1,9 +1,9 @@
 <div style="margin: auto; max-width: 1000px; margin-top:50px">
   <div>
       <b>ADVISOROES</b><br>
-      <input [(ngModel)]="searchValue" type="string" placeholder="Search List ..." (ngModelChange)="search(dataTableGrid.displayParams)" class="form-control input-sm" style="display: inline-block; width: 300px">
-      <input type="date" class="form-control input-sm" style="display: inline-block; width: 300px" [(ngModel)]="fromDate" (ngModelChange)="search(dataTableGrid.displayParams)">
-      <input type="date" class="form-control input-sm" style="display: inline-block; width: 300px"  [(ngModel)]="toDate" (ngModelChange)="search(dataTableGrid.displayParams)">
+      <input #searchBox type="string" placeholder="Search List ..." (keyup)="search($event, searchBox.value)" class="form-control input-sm" style="display: inline-block; width: 300px">
+      <input type="date" class="form-control input-sm" style="display: inline-block; width: 300px" [(ngModel)]="fromDate">
+      <input type="date" class="form-control input-sm" style="display: inline-block; width: 300px"  [(ngModel)]="toDate">
     </div>
   <data-table id="advisories-grid"
       headerTitle=""
@@ -18,7 +18,6 @@
       [multiSelect]="false"
       [translations]="translations"
       [pagination_range]="true"
-     #dataTableGrid
       >
       <data-table-column
           [property]="'type'"
@@ -41,7 +40,6 @@
   </data-table>
   <div><p>{{fromDate}}</p></div>
   <div><p>{{toDate}}</p></div>
-  <div><p>{{searchValue}}</p></div>
 
 </div>
 <!--
