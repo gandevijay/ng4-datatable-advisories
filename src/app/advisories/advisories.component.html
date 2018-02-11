@@ -1,0 +1,50 @@
+<div style="margin: auto; max-width: 1000px; margin-top:50px">
+  <div>
+      <b>ADVISOROES</b><br>
+      <input #searchBox type="string" placeholder="Search List ..." (keyup)="search($event, searchBox.value)" class="form-control input-sm" style="display: inline-block; width: 300px">
+      <input type="date" class="form-control input-sm" style="display: inline-block; width: 300px" [(ngModel)]="fromDate">
+      <input type="date" class="form-control input-sm" style="display: inline-block; width: 300px"  [(ngModel)]="toDate">
+    </div>
+  <data-table id="advisories-grid"
+      headerTitle=""
+      [items]="advisories"
+      [itemCount]="advisoryCount"
+      (reload)="reloadAdvisories($event)"
+      [indexColumn]="false"
+      [limit]="14"
+      [sortBy]="'date'"
+      [sortAsc]="false"
+      [substituteRows]="false"
+      [multiSelect]="false"
+      [translations]="translations"
+      [pagination_range]="true"
+      >
+      <data-table-column
+          [property]="'type'"
+          [header]="'Type'"
+          [sortable]="true">
+      </data-table-column>
+      <data-table-column
+          [property]="'date'"
+          [header]="'Date'"
+          [sortable]="true">
+      </data-table-column>
+      <data-table-column
+          [property]="'title'"
+          [header]="'Title'"
+          [sortable]="true">
+          <ng-template #dataTableCell let-item="item">
+            <a href="{{item.link}}">{{item.title}}</a>
+         </ng-template>
+      </data-table-column>
+  </data-table>
+  <div><p>{{fromDate}}</p></div>
+  <div><p>{{toDate}}</p></div>
+
+</div>
+<!--
+<div *ngFor="let item of advisories">
+    <span>{{item.title}}</span>
+    <span>{{item.date}}</span>
+ </div> -->
+

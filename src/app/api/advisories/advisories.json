@@ -1,0 +1,38 @@
+[
+  {
+    "type": "A",
+    "date": "08/21/2018",
+    "description": "Passport BDE Issue - Payoff statement business value",
+    "descriptionLink": "www.google.com",
+    "productGroup": "BDE,Passport",
+    "id": "A17_035",
+    "ProdDate": "01/01/2018"
+  },
+  {
+    "type": "B",
+    "date": "09/21/2018",
+    "description": "Passport BDE Issue - Payoff statement business value",
+    "descriptionLink": "www.google.com",
+    "productGroup": "BDE,Passport",
+    "id": "A17_035",
+    "ProdDate": "01/01/2018"
+  },
+  {
+    "type": "C",
+    "date": "10/21/2018",
+    "description": "Passport BDE Issue - Payoff statement business value",
+    "descriptionLink": "www.google.com",
+    "productGroup": "BDE,Passport",
+    "id": "A17_035",
+    "ProdDate": "01/01/2018"
+  },
+  {
+    "type": "D",
+    "date": "11/21/2018",
+    "description": "Passport BDE Issue - Payoff statement business value",
+    "descriptionLink": "www.google.com",
+    "productGroup": "BDE,Passport",
+    "id": "A17_035",
+    "ProdDate": "01/01/2018"
+  },
+]

@@ -1,0 +1,42 @@
+<div style="margin: auto; max-width: 1000px; margin-top:50px">
+  <div>
+    <b>REPORTS</b><br>
+      <input #searchBox type="string" placeholder="Search List ..." (keyup)="search($event, searchBox.value)" class="form-control input-sm" style="display: inline-block; width: 300px">
+    </div>
+  <data-table id="reports-grid"
+      headerTitle=""
+      [items]="reports"
+      [itemCount]="reportCount"
+      (reload)="reloadReports($event)"
+      [indexColumn]="false"
+      [limit]="14"
+      [sortBy]="'date'"
+      [sortAsc]="false"
+      [substituteRows]="false"
+      [multiSelect]="false"
+      [translations]="translations"
+      [pagination_range]="true"
+      >
+      <data-table-column
+          [property]="'type'"
+          [header]="'Type'"
+          [sortable]="true">
+      </data-table-column>
+      <data-table-column
+          [property]="'date'"
+          [header]="'Date'"
+          [sortable]="true">
+      </data-table-column>
+      <data-table-column
+          [property]="'title'"
+          [header]="'Title'"
+          [sortable]="true">
+          <ng-template #dataTableCell let-item="item">
+            <a href="{{item.link}}">{{item.title}}</a>
+         </ng-template>
+      </data-table-column>
+  </data-table>
+  <div><p>{{msg}}</p></div>
+</div>
+
+
